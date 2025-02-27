@@ -1,3 +1,4 @@
+import math 
 def fact(n):
 	"""Computes the factorial of a natural number.
 	
@@ -5,7 +6,10 @@ def fact(n):
 	Post: Returns the factorial of 'n'.
 	Throws: ValueError if n < 0
 	"""
-	pass
+	if n < 0: 
+		raise ArithmeticError()
+	fact_value = math.factorial(n)
+	return fact_value
 
 def roots(a, b, c):
 	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
@@ -14,7 +18,14 @@ def roots(a, b, c):
 	Post: Returns a tuple with zero, one or two elements corresponding
 		to the roots of the ax^2 + bx + c polynomial.
 	"""
-	pass
+	delta = (b**2)- (4*a*c) # !!! ** = mettre au carré donc b^2 = b**2
+	print(delta)
+	if delta == 0 :
+		return ((-b + math.sqrt(delta))/(2*a))
+	elif delta > 0:
+		return ((-b - math.sqrt(delta))/(2*a),(-b + math.sqrt(delta))/(2*a))
+	elif delta <0:
+		return (0)
 
 def integrate(function, lower, upper):
 	"""Approximates the integral of a fonction between two bounds
@@ -33,5 +44,5 @@ def integrate(function, lower, upper):
 
 if __name__ == '__main__':
 	print(fact(5))
-	print(roots(1, 0, 1))
+	print(roots(1/3, -2, 3))
 	print(integrate('x ** 2 - 1', -1, 1))
