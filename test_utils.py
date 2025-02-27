@@ -17,5 +17,5 @@ def test_roots():
 def test_integrate():
     # Utiliser eval =() !! possibilité de se faire hacker avec Eval 
     #function_test = str("5x**3-3x+7") 
-    function_test = "x ** 2 - 1"
-    assert utils.integrate(function_test,1,0) == pytest.approx(2/3)
+    function_test = "5*x**3-3*x+7" #!!! à la multiplication entre les x et les valeur, 5x = faux, 5*x = bonne syntaxte
+    assert utils.integrate(function_test,0,1) == pytest.approx(27/4) #!!! lower d'abord 0 => borne du bas, puis upper value 1 => borne du haut
