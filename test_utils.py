@@ -3,7 +3,7 @@ import utils
 
 def test_fact():
     # À compléter...
-    pass
+    assert utils.fact(3)==6
 
 def test_roots():
     # À compléter...
