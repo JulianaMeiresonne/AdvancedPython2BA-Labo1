@@ -13,8 +13,9 @@ def test_roots():
     assert utils.roots(3,-1,2) == (0)
     assert utils.roots(1/3,-2,3) == (3)
     assert utils.roots(3,-4,1) == (1/3,1)
-    pass
 
 def test_integrate():
     # Utiliser eval =() !! possibilité de se faire hacker avec Eval 
-    pass
+    #function_test = str("5x**3-3x+7") 
+    function_test = "x ** 2 - 1"
+    assert utils.integrate(function_test,1,0) == pytest.approx(2/3)

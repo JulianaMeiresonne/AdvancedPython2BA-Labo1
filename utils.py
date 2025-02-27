@@ -1,4 +1,5 @@
 import math 
+from scipy import integrate as itg
 def fact(n):
 	"""Computes the factorial of a natural number.
 	
@@ -40,9 +41,15 @@ def integrate(function, lower, upper):
 		you'll probably need the 'eval' function to evaluate the function
 		to integrate given as a string.
 	"""
-	pass
+	
+	def fun(x):
+		return eval(function)
+	result = itg.quad(fun, lower, upper)
+	return result[0]
 
 if __name__ == '__main__':
 	print(fact(5))
 	print(roots(1/3, -2, 3))
 	print(integrate('x ** 2 - 1', -1, 1))
+
+#!!! une fois qu'on commit un fichier sur git, il continue à le tracker meme si on le met apres sur gitignore
